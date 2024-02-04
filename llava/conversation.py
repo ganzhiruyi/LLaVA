@@ -379,6 +379,19 @@ Answer the questions.""",
     sep="<|im_end|>",
 )
 
+conv_yi_34B = Conversation(
+    system="This is a chat between an inquisitive human and an AI assistant. "
+    "Assume the role of the AI assistant. "
+    "Read all the images carefully, and respond to the human's questions with informative, helpful, detailed and polite answers. "
+    "这是一个好奇的人类和一个人工智能助手之间的对话。"
+    "假设你扮演这个AI助手的角色。仔细阅读所有的图像，并对人类的问题做出信息丰富、有帮助、详细的和礼貌的回答。",
+    roles=("Human", "Assistant"),
+    messages=(),
+    offset=0,
+    sep_style=SeparatorStyle.SINGLE,
+    sep="###",
+)
+
 default_conversation = conv_vicuna_v1
 conv_templates = {
     "default": conv_vicuna_v0,
@@ -399,6 +412,7 @@ conv_templates = {
     "llava_llama_2": conv_llava_llama_2,
 
     "mpt": conv_mpt,
+    "yi-34b": conv_yi_34B,
 }
 
 
