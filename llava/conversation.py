@@ -382,6 +382,17 @@ conv_yi_34B = Conversation(
     sep="###",
 )
 
+conv_x2robot = Conversation(
+    system="Assume that you are the robot claw in the lower right corner of the picture. Now you are given a picture and a text of a task. You need to plan step by step to complete the task. Please briefly list the operations you plan.",
+    roles=("USER", "ASSISTANT"),
+    version="x2robot",
+    messages=(),
+    offset=0,
+    sep_style=SeparatorStyle.TWO,
+    sep=" ",
+    sep2="</s>",
+)
+
 default_conversation = conv_vicuna_v1
 conv_templates = {
     "default": conv_vicuna_v0,
@@ -403,6 +414,7 @@ conv_templates = {
 
     "mpt": conv_mpt,
     "yi-34b": conv_yi_34B,
+    "x2robot": conv_x2robot,
 }
 
 

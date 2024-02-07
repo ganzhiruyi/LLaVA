@@ -112,7 +112,6 @@ def load_pretrained_model(model_path, model_base, model_name, load_8bit=False, l
                     **kwargs
                 )
             else:
-                print('here......')
                 tokenizer = AutoTokenizer.from_pretrained(model_path, use_fast=False)
                 model = LlavaLlamaForCausalLM.from_pretrained(
                     model_path,
